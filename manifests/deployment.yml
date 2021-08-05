@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mctest-c5ed"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mctest-c5ed"
+  template:
+    metadata:
+      labels:
+        app: "mctest-c5ed"
+    spec:
+      containers:
+        - name: "mctest-c5ed"
+          image: "mctest22.azurecr.io/mctest"
+          ports:
+          - containerPort: 25565
