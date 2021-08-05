@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "mctest-c5ed"
+    labels:
+        app: "mctest-c5ed"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: mc-test9ff2-mctest-c5ed.79fe6d4f54bf46379d97.westeurope.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "mctest-c5ed"
+                servicePort: 25565
